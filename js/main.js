@@ -56,21 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
         ".hero__cta",
         {
           opacity: 0,
-          scale: 0.8,
+          scale: 0.8, // Start slightly smaller
           duration: 0.8,
           ease: "back.out(1.7)",
+          immediateRender: false, // Ensures it only animates once
         },
         "-=0.4"
       );
-
-    // Create a floating animation for the CTA button
-    gsap.to(".hero__cta", {
-      y: 10,
-      duration: 1.5,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-    });
   }
 
   /**
@@ -79,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function initializeScrollTriggers() {
     // Parallax effect for hero section
     gsap.to(".hero", {
-      backgroundPosition: `50% ${window.innerHeight / 2}px`,
+      backgroundPosition: "50% 0%",
       ease: "none",
       scrollTrigger: {
         trigger: ".hero",

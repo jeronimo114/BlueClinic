@@ -14,7 +14,7 @@
 // Hero Section Enhancements
 .hero {
   position: relative;
-  background-image: url("../img/hero-background.jpg"); // Add this background image
+  background-image: url("../img/hero.png"); // Add this background image
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -26,7 +26,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 40, 0.7);
+    //background: rgba(0, 0, 40, 0.7);
     z-index: 1;
   }
 
