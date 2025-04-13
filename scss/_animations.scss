@@ -1,0 +1,382 @@
+/* GSAP Animation Styles - Add to your _animations.scss or include in style.scss */
+
+// Scroll Progress Bar
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0d6efd, #198754);
+  width: 0%;
+  z-index: 1000;
+}
+
+// Hero Section Enhancements
+.hero {
+  position: relative;
+  background-image: url("../img/hero-background.jpg"); // Add this background image
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 40, 0.7);
+    z-index: 1;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    padding: 120px 20px;
+    color: white;
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    @media (min-width: 768px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__cta {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(13, 110, 253, 0.5);
+    }
+  }
+}
+
+// Navbar Animation
+.navbar {
+  transition: all 0.3s ease;
+  padding: 16px 0;
+  background-color: transparent;
+
+  .navbar-brand {
+    img {
+      max-height: 50px;
+    }
+  }
+
+  .nav-link {
+    position: relative;
+    padding: 8px 16px !important;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #0d6efd;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    &:hover::after {
+      width: 80%;
+    }
+  }
+}
+
+// Before & After Section
+.before-after {
+  &__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-25deg);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    transform-origin: center;
+    transition: transform 0.5s ease;
+  }
+}
+
+// Plan Cards Enhancement
+.plan-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    background-color: #f8f9fa;
+    padding: 24px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0d6efd;
+  }
+
+  &__body {
+    padding: 30px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price {
+    text-align: center;
+
+    &--usd {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #212529;
+      display: block;
+    }
+
+    &--cop {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: auto;
+
+    li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-right: 8px;
+        font-size: 1.1rem;
+
+        &.bi-check-circle {
+          color: #28a745;
+        }
+
+        &.bi-x-circle {
+          color: #dc3545;
+        }
+      }
+    }
+  }
+
+  // Highlighted card
+  &--highlight {
+    border: 2px solid #0d6efd;
+    transform: scale(1.05);
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      content: "Most Popular";
+      position: absolute;
+      top: 12px;
+      right: -30px;
+      background: #0d6efd;
+      color: white;
+      padding: 5px 30px;
+      font-size: 0.8rem;
+      transform: rotate(45deg);
+      z-index: 3;
+    }
+  }
+}
+
+// Statistics Section
+.statistics {
+  background-color: #f8f9fa;
+  padding: 70px 0;
+
+  .counter-box {
+    text-align: center;
+    padding: 30px 15px;
+
+    .counter-value {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0d6efd;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .counter-label {
+      font-size: 1.1rem;
+      color: #495057;
+    }
+  }
+}
+
+// How It Works Steps
+.step {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #0d6efd;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+
+  h5 {
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+    color: #6c757d;
+  }
+}
+
+// Contact Form Enhancement
+#contact {
+  form {
+    .form-control {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      }
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+    }
+
+    button {
+      padding: 12px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+  }
+}
+
+// Success Message Animation
+.success-message {
+  padding: 30px;
+
+  .success-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #6c757d;
+  }
+}
+
+// Service Cards Enhancement
+.services {
+  .card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-body {
+      padding: 25px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #0d6efd;
+    }
+  }
+}
+
+// Why Us Cards
+.why-us {
+  &__card {
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #0d6efd;
+    }
+  }
+}
