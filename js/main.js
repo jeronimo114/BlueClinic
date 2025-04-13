@@ -186,45 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Plan cards animation
-    const plansTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#plans",
-        start: "top 70%",
-      },
-    });
-
-    plansTl
-      .from("#plans h2, #plans p.text-center", {
-        opacity: 0,
-        y: 30,
-        stagger: 0.2,
-        duration: 0.7,
-      })
-      .from(
-        ".plan-card",
-        {
-          opacity: 0,
-          y: 50,
-          stagger: 0.2,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-        },
-        "-=0.3"
-      );
-
-    // Special animation for the highlighted plan
-    plansTl.to(
-      ".plan-card--highlight",
-      {
-        scale: 1.05,
-        boxShadow: "0 20px 30px rgba(0, 0, 0, 0.15)",
-        duration: 0.5,
-        ease: "back.out(1.7)",
-      },
-      "-=0.3"
-    );
-
     // How It Works steps animation
     gsap.from(".step", {
       opacity: 0,
