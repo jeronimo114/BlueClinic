@@ -398,47 +398,63 @@
       </div>
     </section>
     <!-- CONTACT SECTION -->
-    <section id="contact" class="contact py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">Contact Us</h2>
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <form>
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Full Name"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Email Address"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <input
-                  type="tel"
-                  class="form-control"
-                  placeholder="Phone Number"
-                />
-              </div>
-              <div class="mb-3">
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Message or specific concerns..."
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">
-                Submit
-              </button>
-            </form>
-          </div>
+    <section id="contact" class="contact">
+      <div class="contact__container">
+        <h2 class="contact__title">Start Your Transformation</h2>
+        <p class="contact__subtitle">Schedule your free consultation today</p>
+
+        <div class="contact__form-wrapper">
+          <form class="contact__form">
+            <div class="contact__input-group">
+              <input
+                type="text"
+                class="contact__input"
+                placeholder=" "
+                id="name"
+                required
+              />
+              <label for="name" class="contact__label">Full Name</label>
+            </div>
+
+            <div class="contact__input-group">
+              <input
+                type="email"
+                class="contact__input"
+                placeholder=" "
+                id="email"
+                required
+              />
+              <label for="email" class="contact__label">Email Address</label>
+            </div>
+
+            <div class="contact__input-group">
+              <input
+                type="tel"
+                class="contact__input"
+                placeholder=" "
+                id="phone"
+              />
+              <label for="phone" class="contact__label">Phone Number</label>
+            </div>
+
+            <div class="contact__input-group">
+              <textarea
+                class="contact__textarea"
+                id="message"
+                placeholder=" "
+                rows="4"
+                required
+              ></textarea>
+              <label for="message" class="contact__label">Your Message</label>
+            </div>
+
+            <button type="submit" class="contact__button">
+              <span class="contact__button-text">Send Message</span>
+              <svg class="contact__button-icon" viewBox="0 0 24 24">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </section>
