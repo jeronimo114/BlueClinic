@@ -5,27 +5,6 @@
   h2 {
     color: $brand-light;
   }
-  &__image-wrapper {
-    display: block;
-    position: relative;
-    max-width: 480px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    background: $brand-white;
-    transform: perspective(1000px) rotateY(-5deg) translateZ(0);
-
-    &:hover {
-      transform: perspective(1000px) rotateY(0) translateZ(0);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-
-      .before-after__image {
-        transform: scale(1.05);
-      }
-    }
-  }
 
   &__image {
     width: 100%;
