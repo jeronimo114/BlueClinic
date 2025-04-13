@@ -145,16 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
           duration: 0.7,
         },
         "-=0.4"
-      )
-      .from(
-        ".before-after__image",
-        {
-          opacity: 0,
-          scale: 0.8,
-          duration: 1,
-          ease: "back.out(1.7)",
-        },
-        "-=0.7"
       );
 
     // Create a subtle shine effect across the image
