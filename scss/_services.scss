@@ -1,0 +1,32 @@
+// Services Section
+.services {
+  background: var(--color-light);
+  padding: 4rem 0;
+
+  .card {
+    border: none;
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    &-body {
+      padding: 2rem;
+    }
+
+    &-title {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    &-text {
+      color: var(--color-text);
+      font-size: 0.95rem;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

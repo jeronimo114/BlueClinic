@@ -1,0 +1,10 @@
+// _mixins.scss
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// You can also define color mixins or helpers here.
+// e.g., for repeated transitions, etc.

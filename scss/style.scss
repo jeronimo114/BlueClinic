@@ -1,0 +1,14 @@
+// style.scss
+//
+// We’re using @forward to gather partials into one place
+// so the final compiled CSS is produced by this single file.
+
+@forward "variables";
+@forward "before-after";
+@forward "mixins";
+@forward "navbar";
+@forward "plans";
+@forward "hero";
+@forward "services";
+@forward "sections";
+@forward "footer";

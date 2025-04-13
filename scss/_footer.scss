@@ -1,0 +1,15 @@
+// _footer.scss
+
+@use "variables" as *;
+@use "mixins" as *;
+
+.footer {
+  background-color: $brand-primary;
+  color: $brand-white;
+  text-align: center;
+  padding: 1rem;
+
+  .footer__text {
+    margin: 0;
+  }
+}

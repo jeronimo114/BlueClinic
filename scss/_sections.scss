@@ -1,0 +1,60 @@
+// _sections.scss
+//
+// This covers Why Us, Plans, How It Works, and Contact
+
+@use "variables" as *;
+@use "mixins" as *;
+@use "sass:color";
+
+.why-us {
+  background-color: $brand-light-grey;
+
+  .why-us__card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    .card-title {
+      color: $brand-primary;
+      font-weight: 600;
+    }
+  }
+}
+
+.plans {
+  .plans__table {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+
+    .table-dark {
+      // Replacing any old darken usage
+      background-color: color.adjust($brand-primary, $lightness: -10%);
+    }
+  }
+}
+
+.how-it-works {
+  background-color: $brand-accent;
+
+  .step {
+    .step__icon {
+      // Replacing lighten($brand-primary, 40%)
+      background-color: color.adjust($brand-primary, $lightness: 40%);
+      @include flex-center;
+      font-weight: 700;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.contact {
+  .form-control {
+    border-radius: 0;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    border-radius: 0;
+  }
+}

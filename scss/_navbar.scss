@@ -1,0 +1,35 @@
+// _navbar.scss
+//
+// Use @use to pull in variables, mixins, and the "sass:color" module for color.adjust
+
+@use "variables" as *;
+@use "mixins" as *;
+@use "sass:color";
+
+.navbar {
+  border-bottom: 1px solid #eee;
+
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+
+  .navbar__logo {
+    max-height: 80px; /* Increase or decrease as desired */
+    height: auto; /* Keep aspect ratio */
+    width: auto;
+  }
+
+  .navbar__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $brand-primary;
+  }
+
+  .nav-link {
+    color: $brand-primary;
+
+    &:hover {
+      // Replacing darken($brand-primary, 10%) with color.adjust
+      color: color.adjust($brand-primary, $lightness: -10%);
+    }
+  }
+}
