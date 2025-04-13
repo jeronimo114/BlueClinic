@@ -278,26 +278,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Before/After image hover effect with GSAP
-    const beforeAfterImage = document.querySelector(".before-after__image");
-    if (beforeAfterImage) {
-      beforeAfterImage.addEventListener("mouseenter", () => {
-        gsap.to(beforeAfterImage, {
-          scale: 1.05,
-          duration: 0.4,
-          ease: "power1.out",
-        });
-      });
-
-      beforeAfterImage.addEventListener("mouseleave", () => {
-        gsap.to(beforeAfterImage, {
-          scale: 1,
-          duration: 0.4,
-          ease: "power1.out",
-        });
-      });
-    }
-
     // Plan card hover animations
     const planCards = document.querySelectorAll(".plan-card");
     planCards.forEach((card) => {

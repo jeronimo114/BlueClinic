@@ -2,142 +2,128 @@
 @use "sass:color";
 
 .before-after {
-  h2 {
-    color: $brand-light;
-  }
-
-  &__image {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    object-fit: cover;
-    border-radius: 8px;
-    aspect-ratio: 1/1;
-  }
-
-  &__labels {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  &__label {
-    position: relative;
-    background: rgba($brand-primary, 0.95);
-    color: $brand-white;
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    backdrop-filter: blur(2px);
-    transform: translateZ(0);
-    transition: all 0.3s ease;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        45deg,
-        rgba($brand-primary, 0.9),
-        rgba(color.adjust($brand-primary, $lightness: -10%), 0.9)
-      );
-      z-index: -1;
-      border-radius: 6px;
-    }
-
-    &.before {
-      margin-right: auto;
-    }
-
-    &.after {
-      margin-left: auto;
-      background: rgba($brand-accent, 0.95);
-
-      &::before {
-        background: linear-gradient(
-          45deg,
-          rgba($brand-accent, 0.9),
-          rgba(color.adjust($brand-accent, $lightness: -10%), 0.9)
-        );
-      }
-    }
-  }
+  background-color: #f8f9fa;
 }
 
-// Enhanced CTA Button
+.before-after h2 {
+  color: #4abecb;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.before-after__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  object-fit: cover;
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+}
+
+.before-after__labels {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.before-after__label {
+  position: relative;
+  background: rgba(34, 139, 230, 0.95);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+}
+
+.before-after__label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(34, 139, 230, 0.9),
+    rgba(23, 115, 200, 0.9)
+  );
+  z-index: -1;
+  border-radius: 6px;
+}
+
+.before-after__label.after {
+  background: rgba(0, 179, 159, 0.95);
+}
+
+.before-after__label.after::before {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 179, 159, 0.9),
+    rgba(0, 149, 133, 0.9)
+  );
+}
+
 .ba-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  opacity: 1 !important;
-  background: linear-gradient(
-    135deg,
-    $brand-light 0%,
-    color.adjust($brand-light, $lightness: -5%) 100%
-  );
-  color: $brand-white;
+  background: linear-gradient(135deg, #4abecb 0%, #3a9ca6 100%);
+  color: white;
   border: none;
   border-radius: 50px;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  transform: translateZ(0);
-  box-shadow: 0 4px 16px rgba($brand-light, 0.2);
+  box-shadow: 0 4px 16px rgba(74, 190, 203, 0.2);
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    transform: skewX(-25deg);
-    transition: left 0.6s ease;
+.ba-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(74, 190, 203, 0.3);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #228be6;
+  padding: 1.2rem;
+  border-radius: 50%;
+  background-size: 60%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #228be6;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #228be6;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .before-after h2 {
+    font-size: 2rem;
   }
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba($brand-light, 0.3);
-
-    &::after {
-      left: 150%;
-    }
-  }
-
-  &:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba($brand-light, 0.2);
-  }
-
-  i {
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
-  }
-
-  @media (max-width: 768px) {
+  .ba-btn {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
   }
