@@ -4,8 +4,8 @@
 @use "mixins" as *;
 
 .footer {
-  background-color: #585858 !important;
-  color: $brand-white;
+  background-color: $brand-light !important;
+  color: white;
   text-align: center;
   padding: 1rem;
 
