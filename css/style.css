@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .before-after__image-wrapper {
   display: inline-block;
   position: relative;
@@ -5,11 +6,13 @@
   border: 1px solid #ddd;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  background-color: #fff;
+  background-color: #ffffff;
+  /* You can adjust background or border color to fit your style */
 }
 .before-after__image {
+  /* Make the image a bit smaller overall */
   max-width: 100%;
-  width: 300px;
+  width: 300px; /* Fixed width for a smaller display on larger screens */
   height: auto;
   border-radius: 4px;
 }
@@ -19,12 +22,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  pointer-events: none;
+  pointer-events: none; /* ensures the labels don’t block clicks */
 }
 .before-after__label {
   position: absolute;
   background-color: #0a1c57;
-  color: #fff;
+  color: #ffffff;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
@@ -40,14 +43,15 @@
   bottom: 0.5rem;
   left: 0.5rem;
 }
+
 .navbar {
   border-bottom: 1px solid #eee;
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
 }
 .navbar .navbar__logo {
-  max-height: 80px;
-  height: auto;
+  max-height: 80px; /* Increase or decrease as desired */
+  height: auto; /* Keep aspect ratio */
   width: auto;
 }
 .navbar .navbar__title {
@@ -61,6 +65,7 @@
 .navbar .nav-link:hover {
   color: rgb(4.7422680412, 13.2783505155, 41.2577319588);
 }
+
 .plans {
   background-color: #f7f9fc;
   text-align: center;
@@ -78,11 +83,8 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
 }
 .plans .plan-card__header {
-  background: linear-gradient(
-    135deg,
-    rgb(20.5154639175, 57.4432989691, 178.4845360825) 0%,
-    #0a1c57 100%
-  );
+  /* Gradient bar at the top */
+  background: linear-gradient(135deg, rgb(20.5154639175, 57.4432989691, 178.4845360825) 0%, #0a1c57 100%);
   color: #fff;
   padding: 1rem;
 }
@@ -131,6 +133,7 @@
   color: #dc3545;
 }
 .plans .plan-card--highlight {
+  /* Emphasize middle plan with a thicker border or box-shadow */
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   border: 2px solid rgb(20.5154639175, 57.4432989691, 178.4845360825);
   transform: scale(1.01);
@@ -139,12 +142,10 @@
   transform: scale(1.02) translateY(-3px);
 }
 .plans .plan-card--highlight .plan-card__header {
-  background: linear-gradient(
-    135deg,
-    rgb(23.1443298969, 64.8041237113, 201.3556701031) 0%,
-    #0a1c57 100%
-  );
+  /* Slightly different gradient or color tweak for emphasis */
+  background: linear-gradient(135deg, rgb(23.1443298969, 64.8041237113, 201.3556701031) 0%, #0a1c57 100%);
 }
+
 .hero {
   background-color: #f0f4ff;
   padding: 4rem 2rem;
@@ -173,6 +174,7 @@
 .hero__cta:hover {
   background-color: rgb(7.3711340206, 20.6391752577, 64.1288659794);
 }
+
 .services {
   background: var(--color-light);
   padding: 4rem 0;
@@ -199,6 +201,7 @@
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 .why-us {
   background-color: #fafafa;
 }
@@ -210,6 +213,7 @@
   color: #0a1c57;
   font-weight: 600;
 }
+
 .plans .plans__table {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -217,22 +221,23 @@
 .plans .plans__table .table-dark {
   background-color: rgb(4.7422680412, 13.2783505155, 41.2577319588);
 }
+
 .how-it-works {
   background-color: #f0f4ff;
 }
 .how-it-works .step .step__icon {
-  background-color: hsl(225.974025974, 79.381443299%, 59.0196078431%);
+  background-color: rgb(67.5463917526, 106.3298969072, 233.4536082474);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  width: 2.5rem;
-  height: 2.5rem;
-  aspect-ratio: 1;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  aspect-ratio: 1;
+  flex-shrink: 0;
 }
+
 .contact .form-control {
   border-radius: 0;
   margin-bottom: 1rem;
@@ -240,12 +245,15 @@
 .contact button {
   border-radius: 0;
 }
+
 .footer {
   background-color: #0a1c57;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   padding: 1rem;
 }
 .footer .footer__text {
   margin: 0;
-} /*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
