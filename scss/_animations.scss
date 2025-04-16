@@ -16,7 +16,7 @@
   position: relative;
   background-image: url("../img/hero.png"); // Add this background image
   background-size: cover;
-  background-position: center;
+  background-position: calc(65%);
   overflow: hidden;
 
   &::before {
