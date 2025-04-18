@@ -2,9 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
-  // Initialize animations
-  initializeAnimations();
-  initializeScrollTriggers();
+  // Initialize animations (skip heavy motion if user prefers reduced motion)
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  if (!prefersReducedMotion) {
+    initializeAnimations();
+    initializeScrollTriggers();
+  }
+  // Always bind interaction handlers
   initializeInteractions();
 
   // Dynamic footer year
@@ -393,34 +399,4 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   }
-});
-document.addEventListener("DOMContentLoaded", function () {
-  var modal = document.getElementById("popupModal");
-  var closeBtn = modal.querySelector(".close");
-
-  // Close handlers
-  closeBtn.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
-  window.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-
-  // Submit handler
-  document.getElementById("popupSubmit").addEventListener("click", function () {
-    var email = document.getElementById("popupEmail").value;
-    var phone = document.getElementById("popupPhone").value;
-    if (email && phone) {
-      // TODO: replace with your form submission logic (e.g., AJAX)
-      console.log({ email: email, phone: phone });
-      modal.style.display = "none";
-    }
-  });
-
-  // Expose showPopup() to trigger manually when needed
-  window.showPopup = function () {
-    modal.style.display = "flex";
-  };
 });
