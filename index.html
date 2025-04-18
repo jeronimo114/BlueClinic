@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Performance Hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://assets.calendly.com" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -25,9 +30,17 @@
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
     <!-- BOOTSTRAP CSS (local or CDN) -->
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      as="style"
+      onload="this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      />
+    </noscript>
 
     <link
       rel="stylesheet"
@@ -62,6 +75,8 @@
           <img
             src="img/logo.png"
             alt="Blue Clinic Logo"
+            width="160"
+            height="45"
             class="navbar__logo me-2"
           />
         </a>
@@ -249,6 +264,8 @@
                     <img
                       src="img/before-after-image-1.png"
                       alt="Before and after veneer treatment 1"
+                      width="560"
+                      height="380"
                       loading="lazy"
                       class="before-after__image"
                     />
@@ -261,6 +278,8 @@
                     <img
                       src="img/before-after-image-2.png"
                       alt="Before and after veneer treatment 2"
+                      width="560"
+                      height="380"
                       loading="lazy"
                       class="before-after__image"
                     />
@@ -776,7 +795,7 @@
     ></script>
 
     <!-- Main JS (Optional) -->
-    <script src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
     <script>
       // Simple dynamic year for footer
       const yearSpan = document.getElementById("footer-year");
