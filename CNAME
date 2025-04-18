@@ -1,9 +1,1 @@
-Type: CNAME Record
-Host: www
-Value: jeronimo114.github.io
-TTL: Automatic
-
-Type: URL Redirect Record (301)
-Host: @
-Value: https://www.blueclinicstudio.com
-TTL: Automatic
+blueclinicstudio.com
