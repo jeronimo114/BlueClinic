@@ -1,0 +1,45 @@
+#popupModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+#popupModal .modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+#popupModal input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#popupModal button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #ff6600;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+#popupModal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
