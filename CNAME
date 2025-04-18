@@ -1,1 +1,4 @@
-blueclinicstudio.com
+Type: CNAME Record
+Host: www
+Value: jeronimo114.github.io
+TTL: Automatic
