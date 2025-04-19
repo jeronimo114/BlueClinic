@@ -243,9 +243,9 @@
                 </p>
                 <footer class="blockquote-footer">Carlos Marín</footer>
               </blockquote>
-              <a href="" id="trigger" class="hero__cta mt-3">
+              <button type="button" id="trigger" class="hero__cta mt-3">
                 Start Your Own Transformation
-              </a>
+              </button>
             </div>
           </div>
 
@@ -759,6 +759,12 @@
       <div class="modal-content">
         <button class="close" aria-label="Close">&times;</button>
         <h2 id="popupTitle" class="visually-hidden">Free Consultation Form</h2>
+
+        <!-- NEW helper copy -->
+        <p class="modal-desc">
+          Leave your details & our coordinator will contact you within 24 h.
+        </p>
+
         <form id="popupForm">
           <input type="email" id="popupEmail" placeholder="Email" required />
           <input
@@ -768,7 +774,10 @@
             required
             pattern="[0-9+\- ]{7,15}"
           />
-          <button type="submit" id="popupSubmit">Submit</button>
+          <!-- add popup-submit class -->
+          <button type="submit" id="popupSubmit" class="popup-submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
@@ -803,28 +812,6 @@
       if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
       }
-    </script>
-    <script defer>
-      document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("popupModal");
-        const ctaBtn = document.getElementById("ctaBtn");
-        const closeBtn = modal.querySelector(".close");
-
-        const hide = () => (modal.style.display = "none");
-        const show = () => (modal.style.display = "flex");
-
-        ctaBtn.addEventListener("click", show);
-        closeBtn.addEventListener("click", hide);
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) hide();
-        });
-
-        document.getElementById("popupForm").addEventListener("submit", (e) => {
-          e.preventDefault();
-          // TODO: integrate with backend or email service
-          hide();
-        });
-      });
     </script>
     <!-- BEGIN Cookie Banner -->
     <div id="cookieBanner" class="fixed-bottom bg-dark text-white p-3 d-none">

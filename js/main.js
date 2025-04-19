@@ -2,6 +2,61 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
+  /*--------------------------------------------------
+    POPUP MODAL  (email + phone capture)
+  --------------------------------------------------*/
+  const modal = document.getElementById("popupModal");
+  const closeBtn = modal?.querySelector(".close");
+  const ctaBtn = document.getElementById("ctaBtn"); // hero CTA
+  const testimonialBtn = document.getElementById("trigger"); // testimonial CTA
+  const form = document.getElementById("popupForm");
+
+  const show = () => {
+    if (!modal) return;
+    modal.style.display = "flex";
+    // ensure proper centering in case other styles override
+    modal.style.alignItems = "center";
+    modal.style.justifyContent = "center";
+    document.body.style.overflow = "hidden";
+    const firstInput = modal.querySelector("input");
+    firstInput && firstInput.focus();
+  };
+  const hide = () => {
+    if (!modal) return;
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  };
+
+  ctaBtn &&
+    ctaBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      show();
+    });
+  testimonialBtn &&
+    testimonialBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      show();
+    });
+  closeBtn && closeBtn.addEventListener("click", hide);
+  modal &&
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) hide();
+    });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hide();
+  });
+
+  // simple front‑end submit (replace with AJAX / fetch)
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("popupEmail").value;
+    const phone = document.getElementById("popupPhone").value;
+    if (!email || !phone) return;
+    console.log({ email, phone }); // <-- remove in production
+    hide();
+    // optional: show toast or success alert here
+  });
+
   // Initialize animations (skip heavy motion if user prefers reduced motion)
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
