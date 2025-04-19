@@ -735,8 +735,16 @@
           </div>
           <div class="col-md-6 text-center text-md-end">
             <nav class="nav justify-content-md-end gap-3 small">
-              <a href="#" class="nav-link text-muted p-0">Privacy Policy</a>
-              <a href="#" class="nav-link text-muted p-0">Terms of Service</a>
+              <a
+                href="./legal/privacy-policy.html"
+                class="nav-link text-muted p-0"
+                >Privacy Policy</a
+              >
+              <a
+                href="./legal/terms-of-service.html"
+                class="nav-link text-muted p-0"
+                >Terms of Service</a
+              >
             </nav>
           </div>
         </div>
@@ -818,5 +826,47 @@
         });
       });
     </script>
+    <!-- BEGIN Cookie Banner -->
+    <div id="cookieBanner" class="fixed-bottom bg-dark text-white p-3 d-none">
+      <div
+        class="container d-flex flex-wrap justify-content-between align-items-center"
+      >
+        <span class="small">
+          We use our own and third‑party cookies for analytics, ads &amp; a
+          personalised experience.
+          <a
+            href="/cookie-policy.html"
+            class="text-decoration-underline text-white"
+            >Learn more</a
+          >.
+        </span>
+        <div class="mt-2 mt-lg-0">
+          <button id="cbAccept" class="btn btn-primary btn-sm me-2">
+            Accept all
+          </button>
+          <button id="cbReject" class="btn btn-outline-light btn-sm">
+            Reject non‑essential
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const banner = document.getElementById("cookieBanner");
+        if (!localStorage.getItem("bc_cookie_pref"))
+          banner.classList.remove("d-none");
+
+        const save = (v) => {
+          localStorage.setItem("bc_cookie_pref", v);
+          banner.classList.add("d-none");
+          if (v !== "all") window["ga-disable-G-8HCGXT92WQ"] = true; // turn off GA
+        };
+
+        document.getElementById("cbAccept").onclick = () => save("all");
+        document.getElementById("cbReject").onclick = () => save("essential");
+      })();
+    </script>
+    <!-- END Cookie Banner -->
   </body>
 </html>
