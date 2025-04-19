@@ -46,15 +46,46 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") hide();
   });
 
-  // simple front‑end submit (replace with AJAX / fetch)
-  form?.addEventListener("submit", (e) => {
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const email = document.getElementById("popupEmail").value;
-    const phone = document.getElementById("popupPhone").value;
-    if (!email || !phone) return;
-    console.log({ email, phone }); // <-- remove in production
-    hide();
-    // optional: show toast or success alert here
+
+    const email = document.getElementById("popupEmail").value.trim();
+    const phone = document.getElementById("popupPhone").value.trim();
+    if (!email || !phone) {
+      alert("Please fill in both fields.");
+      return;
+    }
+
+    // feedback
+    const btn = document.getElementById("popupSubmit");
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.innerHTML =
+      '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';
+
+    try {
+      const res = await fetch("https://formspree.io/f/xjkynyya", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, phone, source: "popup" }),
+      });
+
+      if (res.ok) {
+        btn.innerHTML = "✓ Sent!";
+        setTimeout(() => {
+          hide();
+          form.reset();
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+        }, 1200);
+      } else {
+        throw new Error("Network");
+      }
+    } catch (err) {
+      alert("Oops… couldn’t send. Please try again.");
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+    }
   });
 
   // Initialize animations (skip heavy motion if user prefers reduced motion)
